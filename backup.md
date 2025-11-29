@@ -1,3 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Velazta Linktree</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <main>
+        <div class="container-left">
+            <h1 class="main-title">VELAZTA</h1>
+            <p class="subtitle">FOLLOW MY SOCIAL MEDIA</p>
+
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                
+                <a href="https://roblox.com" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/roblox.png" alt="Roblox" class="icon-img">
+                </a>
+                
+                <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+            </div>
+
+            <div class="support-wrapper">
+                <a href="#" class="btn-custom">
+                    <span class="btn-text">SUPPORT ME</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="container-right">
+            <img src="assets/simo.png" alt="Simo Hayha" class="character-img">
+
+            <img src="assets/lightning effect.png" alt="Lightning Effect" class="lightning-effect">
+        </div>
+
+        <div class="bottom-overlay-container">
+            <img src="assets/effect overlay bottom.png" alt="effect overlay" class="overlay-img">
+        </div>
+    </main>
+</body>
+</html>
+
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* Reset Dasar */
@@ -7,27 +63,20 @@
     box-sizing: border-box;
 }
 
-
 body {
     height: 100vh;
     width: 100%;
-    
-    /* --- PENGATURAN BACKGROUND BARU --- */
-    /* Menggunakan satu gambar utuh (Desktop - 3.jpg) */
-    background-image: url('assets/Desktop\ -\ 5.png'); 
-    background-size: cover;       /* Memenuhi layar */
-    background-position: center;  /* Posisi tengah */
-    background-repeat: no-repeat; /* Jangan diulang */
-    
+    background: linear-gradient(180deg, #000000 0%, #303030 50%, #7B7B7B 100%);
     overflow: hidden; 
     font-family: 'Bebas Neue', sans-serif;
+    z-index: 1;
 }
 
 /* --- Posisi Konten di Kiri --- */
 .container-left {
     position: absolute;
     top: 50%;             
-    left: 6%;            
+    left: 7%;            
     transform: translateY(-40%); 
     z-index: 5;
     /* Opsional: Batasi lebar agar tidak terlalu melebar ke kanan */
