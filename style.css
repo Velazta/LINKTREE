@@ -7,20 +7,58 @@
     box-sizing: border-box;
 }
 
-
 body {
     height: 100vh;
     width: 100%;
-    
-    /* --- PENGATURAN BACKGROUND BARU --- */
-    /* Menggunakan satu gambar utuh (Desktop - 3.jpg) */
     background-image: url('assets/Desktop\ -\ 5.png'); 
-    background-size: cover;       /* Memenuhi layar */
-    background-position: center;  /* Posisi tengah */
-    background-repeat: no-repeat; /* Jangan diulang */
-    
+    background-size: cover;      
+    background-position: center;  
+    background-repeat: no-repeat; 
+    margin: 0;
     overflow: hidden; 
     font-family: 'Bebas Neue', sans-serif;
+}
+
+.top-banner {
+    position: absolute; /* Tetap di atas mengikuti desainmu */
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 80px;       /* Sesuaikan tinggi banner */
+    background-color: #D9D9D9; /* Warna abu-abu sesuai gambar banner.png */
+    overflow: hidden;   /* Sembunyikan teks yang keluar jalur */
+    z-index: 100;       /* Pastikan berada di atas elemen lain */
+    display: flex;
+    align-items: center;
+}
+
+.banner-track {
+    display: flex;
+    width: fit-content; /* Lebar menyesuaikan isi konten */
+    /* Animasi: nama_animasi, durasi, tipe gerak, pengulangan */
+    animation: scroll-right 30s linear infinite; 
+}
+
+.banner-content {
+    white-space: nowrap; /* Teks tidak boleh turun ke bawah */
+    font-family: 'Bebas Neue', sans-serif; /* Menggunakan font utama kamu */
+    font-size: 2.5rem;   /* Ukuran font */
+    color: #000000;      /* Warna teks hitam */
+    font-weight: bold;
+    padding-right: 0;    /* Jarak antar grup teks */
+    letter-spacing: 5px;
+}
+
+/* --- Keyframes untuk Animasi Bergerak ke Kanan --- */
+@keyframes scroll-right {
+    0% {
+        /* Mulai dari posisi geser -50% (tengah track) */
+        transform: translateX(-50%);
+    }
+    100% {
+        /* Berakhir di posisi 0 (awal track) */
+        transform: translateX(0%);
+    }
 }
 
 /* --- Posisi Konten di Kiri --- */
@@ -230,6 +268,14 @@ body {
 
 /* --- Responsif (HP) --- */
 @media (max-width: 768px) {
+    .top-banner {
+        height: 40px;
+    }
+    
+    .banner-content {
+        font-size: 1.2rem;
+    }
+
     .container-left {
         left: 50%;
         transform: translate(-50%, -50%);
@@ -261,7 +307,7 @@ body {
     }
 
     .container-right {
-        opacity: 0.2; /* Dibuat samar saja di HP */
+        opacity: 0.2; 
         width: 100%;
         z-index: 1;
     }
