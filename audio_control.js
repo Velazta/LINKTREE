@@ -3,23 +3,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('ambient-sound');
     
-    // Fungsi untuk memulai audio
+    if (audio) {
+        audio.volume = 0.03; 
+    }
+    
     function playAudioOnce() {
-        // Coba putar audio.
-        // Cek dulu apakah audio sudah memiliki data dan belum berstatus 'paused'
         if (audio && audio.paused) {
             audio.play().catch(error => {
-                // Tangani error jika pemutaran gagal (karena browser blocking)
                 console.log("Audio play failed, waiting for user interaction.", error);
             });
             
-            // Hapus event listener setelah interaksi pertama
             document.removeEventListener('click', playAudioOnce);
             document.removeEventListener('keydown', playAudioOnce);
         }
     }
 
-    // Tunggu interaksi pengguna pertama (klik atau tekan tombol)
     document.addEventListener('click', playAudioOnce);
     document.addEventListener('keydown', playAudioOnce);
 });
